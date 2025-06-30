@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enter PIN</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #loginBox {
+      border: 1px solid #ccc;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="loginBox">
+    <h2>Enter PIN to continue</h2>
+    <input type="password" id="pinInput" placeholder="Enter PIN" />
+    <button onclick="checkPIN()">Submit</button>
+    <p id="message" style="color:red;"></p>
+  </div>
+
+  <script>
+    const correctPIN = "5873"; // Change this to your desired PIN
+
+    function checkPIN() {
+      const userPIN = document.getElementById("pinInput").value;
+      if (userPIN === correctPIN) {
+        window.location.href = "signup.html"; // Redirect to your protected page
+      } else {
+        document.getElementById("message").textContent = "Incorrect PIN.";
+      }
+    }
+  </script>
+</body>
+</html>
